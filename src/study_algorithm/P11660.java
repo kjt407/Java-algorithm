@@ -3,6 +3,7 @@ package study_algorithm;
 import java.util.*;
 import java.io.*;
 
+// 2차원 배열 부분합
 public class P11660 {
 
 	public static void main(String[] args) throws Exception{
@@ -36,9 +37,9 @@ public class P11660 {
             int x2 = Integer.parseInt(st.nextToken());
             int y2 = Integer.parseInt(st.nextToken());
             
+            // 종단점 부분합에서 포함되지 않는 부분을 빼기
             int result = preArray[x2][y2] - preArray[x1-1][y2] - preArray[x2][y1-1] + preArray[x1-1][y1-1];
             System.out.println(result);
-            
         }
         
 	}
