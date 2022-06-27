@@ -9,15 +9,14 @@ public class P1874 {
 
 	public static void main(String[] args) throws Exception{
 		
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		int N = Integer.parseInt(br.readLine());
+        Scanner sc = new Scanner(System.in);
+		int N = sc.nextInt();
 		
 		int[] A = new int[N];
 		
 		// N개의 숫자 배열 초기화
 		for(int i=0; i<N ; i++) {
-			br = new BufferedReader(new InputStreamReader(System.in));
-			A[i] = Integer.parseInt(br.readLine());
+			A[i] = sc.nextInt();
 		}
 		
 		Stack<Integer> stack = new Stack<Integer>();
@@ -53,4 +52,5 @@ public class P1874 {
 		}
 		if(result) System.out.println(sb.toString());
 	}
+	
 }

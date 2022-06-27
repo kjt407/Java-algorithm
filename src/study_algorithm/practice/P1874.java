@@ -32,7 +32,9 @@ public class P1874 {
 		
 			/** 분기를 잘 구성해 보자 **/
 			if(target >= num) {
-				while(target >= num)
+				while(target >= num) {
+					
+				}
 			}else {
 				
 			}
