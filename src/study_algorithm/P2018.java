@@ -3,7 +3,7 @@ package study_algorithm;
 import java.util.*;
 import java.io.*;
 
-// ÅõÆ÷ÀÎÅÍ = ¿¬¼ÓµÈ ÀÚ¿¬¼öÀÇ ÇÕÀÌ Á¶°ÇÀÏ¶§ °¡Àå È¿°úÀûÀÎ ¾Ë°í¸®Áò
+// íˆ¬í¬ì¸í„° = ì—°ì†ëœ ìì—°ìˆ˜ì˜ í•©ì´ ì¡°ê±´ì¼ë•Œ ê°€ì¥ íš¨ê³¼ì ì¸ ì•Œê³ ë¦¬ì¦˜
 public class P2018 {
 
 	public static void main(String[] args) throws Exception{

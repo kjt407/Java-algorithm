@@ -3,28 +3,28 @@ package study_algorithm;
 import java.util.*;
 import java.io.*;
 
-//ÁÖ¸ùÀÇ ¸í·É ÅõÆ÷ÀÎÅÍ È°¿ëÇÏ¿© Áßº¹µÇÁö ¾Ê´Â Á¶ÇÕÀÇ ¼ö ±¸ÇÏ±â
+//ì£¼ëª½ì˜ ëª…ë ¹ íˆ¬í¬ì¸í„° í™œìš©í•˜ì—¬ ì¤‘ë³µë˜ì§€ ì•ŠëŠ” ì¡°í•©ì˜ ìˆ˜ êµ¬í•˜ê¸°
 public class P1940 {
 
 	public static void main(String[] args) throws Exception{
-		// Àç·áÀÇ ¼ö N, ´Ş¼ºÇØ¾ßÇÏ´Â ÀÏ·Ã¹øÈ£ ÇÕÀÇ °ª M, Àç·áÀÇ ¸ñ·ÏÀ» À§ÇÑ ¹è¿­O, ¿Ï¼ºµÈ °©¿ÊÀÇ ¼ö count
+		// ì¬ë£Œì˜ ìˆ˜ N, ë‹¬ì„±í•´ì•¼í•˜ëŠ” ì¼ë ¨ë²ˆí˜¸ í•©ì˜ ê°’ M, ì¬ë£Œì˜ ëª©ë¡ì„ ìœ„í•œ ë°°ì—´O, ì™„ì„±ëœ ê°‘ì˜·ì˜ ìˆ˜ count
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int N = Integer.parseInt(br.readLine());
 		int M = Integer.parseInt(br.readLine());
 		int[] O = new int[N];
 		int count = 0;
 		
-		// Àç·áÀÇ ¼ö ¸¸Å­ Àç·áÀÇ ¸ñ·ÏÀ» ÃÊ±âÈ­ ½ÃÅ´
+		// ì¬ë£Œì˜ ìˆ˜ ë§Œí¼ ì¬ë£Œì˜ ëª©ë¡ì„ ì´ˆê¸°í™” ì‹œí‚´
 		StringTokenizer st = new StringTokenizer(br.readLine());
 		for(int i=0; i<N; i++) {
 			O[i] = Integer.parseInt(st.nextToken());
 		}
 		
-		// Àç·áÀÇ Å©±â¸¦ ±âÁØÀ¸·Î ¿À¸§Â÷¼ø Á¤·ÄÇÔ
+		// ì¬ë£Œì˜ í¬ê¸°ë¥¼ ê¸°ì¤€ìœ¼ë¡œ ì˜¤ë¦„ì°¨ìˆœ ì •ë ¬í•¨
 		Arrays.sort(O);
 		
-		// ÅõÆ÷ÀÎÅÍ ·ÎÁ÷
-		// ½ÃÀÛ Á¾·á Æ÷ÀÎÅÍ À§Ä¡ ¼³Á¤
+		// íˆ¬í¬ì¸í„° ë¡œì§
+		// ì‹œì‘ ì¢…ë£Œ í¬ì¸í„° ìœ„ì¹˜ ì„¤ì •
 		int start = 0;
 		int end = N-1;
 		while(start < end) {
@@ -40,7 +40,7 @@ public class P1940 {
 			}
 		}
 			
-		// Á¤´ä Ãâ·Â ¹× BufferedReader close
+		// ì •ë‹µ ì¶œë ¥ ë° BufferedReader close
 		System.out.println(count);
 		br.close();
 	}

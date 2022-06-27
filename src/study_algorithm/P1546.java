@@ -3,7 +3,7 @@ package study_algorithm;
 import java.util.*;
 import java.io.*;
 
-// Æò±Õ ±¸ÇÏ±â
+// í‰ê·  êµ¬í•˜ê¸°
 public class P1546 {
 
     public static void main(String[] args) {
@@ -18,8 +18,8 @@ public class P1546 {
         long sum = 0;
         long max = 0;
         
-        // ÃÖ°í°ª È¹µæÀ» À§ÇÑ ºñ±³ ¿¬»ê
-        // Á¡¼öÀÇ ÃÑÇÕ
+        // ìµœê³ ê°’ íšë“ì„ ìœ„í•œ ë¹„êµ ì—°ì‚°
+        // ì ìˆ˜ì˜ ì´í•©
         for(int i=0; i < N; i++){
             if(A[i]>max) max = A[i];
             sum = sum+A[i];

@@ -3,43 +3,43 @@ package study_algorithm;
 import java.util.*;
 import java.io.*;
 
-// ³ª¸ÓÁö ÇÕ ±¸ÇÏ±â
+// ë‚˜ë¨¸ì§€ í•© êµ¬í•˜ê¸°
 public class P10986 {
 
 	public static void main(String[] args) throws Exception{
-		// ÇÑÁÙ¿¡ ÅäÅ«´ÜÀ§·Î ÀÔ·Â ¹Ş±âÀ§ÇÑ ¼¼ÆÃ
+		// í•œì¤„ì— í† í°ë‹¨ìœ„ë¡œ ì…ë ¥ ë°›ê¸°ìœ„í•œ ì„¸íŒ…
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer stringTokenizer = new StringTokenizer(bufferedReader.readLine());
 		int N = Integer.parseInt(stringTokenizer.nextToken());
 		int M = Integer.parseInt(stringTokenizer.nextToken());
 		
-		// ÇÕ¹è¿­ S, ³ª¸ÓÁö °ªÀÌ °°Àº ¿ø¼ÒµéÀÇ °³¼ö Ä«¿îÆÃÇÏ´Â C¹è¿­
-		// C¹è¿­À» key, value¿Í ºñ½ÁÇÏ°Ô È°¿ëµÊ EX)C[0]=3, C[1]=2 ³ª¸ÓÁö°¡ 0ÀÎ ¿ø¼Ò 3°³, 1ÀÎ ¿ø¼Ò 2°³
+		// í•©ë°°ì—´ S, ë‚˜ë¨¸ì§€ ê°’ì´ ê°™ì€ ì›ì†Œë“¤ì˜ ê°œìˆ˜ ì¹´ìš´íŒ…í•˜ëŠ” Cë°°ì—´
+		// Cë°°ì—´ì„ key, valueì™€ ë¹„ìŠ·í•˜ê²Œ í™œìš©ë¨ EX)C[0]=3, C[1]=2 ë‚˜ë¨¸ì§€ê°€ 0ì¸ ì›ì†Œ 3ê°œ, 1ì¸ ì›ì†Œ 2ê°œ
 		long[] S = new long[N];
 		long[] C = new long[M];
 		long answer = 0;
 		
-		// ¿ø¼Ò N°³ ÀÔ·Â¹Ş¾Æ ÇÕ¹è¿­ »ı¼º
+		// ì›ì†Œ Nê°œ ì…ë ¥ë°›ì•„ í•©ë°°ì—´ ìƒì„±
 		stringTokenizer = new StringTokenizer(bufferedReader.readLine());
 		S[0] = Integer.parseInt(stringTokenizer.nextToken());
 		for(int i=1; i<N; i++) {
 			S[i] = S[i-1] + Integer.parseInt(stringTokenizer.nextToken());
 		}
 		
-		// ³ª¸ÓÁö °ªÀÌ 0ÀÎ ¿ø¼Ò¸¸Å­ Á¤´ä Ä«¿îÆ®, ³ª¸ÓÁö °ªÀÌ °°Àº ¿ø¼Ò ¹è¿­ C Ä«¿îÆ®
+		// ë‚˜ë¨¸ì§€ ê°’ì´ 0ì¸ ì›ì†Œë§Œí¼ ì •ë‹µ ì¹´ìš´íŠ¸, ë‚˜ë¨¸ì§€ ê°’ì´ ê°™ì€ ì›ì†Œ ë°°ì—´ C ì¹´ìš´íŠ¸
 		for(int i=0; i<N; i++) {
 			int remainder = (int) (S[i]%M);
 			if(remainder == 0) answer++;
 			C[remainder]++;
 		}
 		
-		// ³ª¸ÓÁö °ªÀÌ Áßº¹µÇ´Â ¿ø¼ÒÁß 2°³¸¦ ¼±ÅÃÇÏ´Â Á¶ÇÕÀÇ °³¼ö¸¸Å­ Á¤´ä¿¡ Ãß°¡
+		// ë‚˜ë¨¸ì§€ ê°’ì´ ì¤‘ë³µë˜ëŠ” ì›ì†Œì¤‘ 2ê°œë¥¼ ì„ íƒí•˜ëŠ” ì¡°í•©ì˜ ê°œìˆ˜ë§Œí¼ ì •ë‹µì— ì¶”ê°€
 		for(int i=0; i<M; i++){
 			if(C[i]>1){
 				answer = (answer+ (C[i] * (C[i]-1)/2));
 			}
 		}
-		// Á¤´äÃâ·Â
+		// ì •ë‹µì¶œë ¥
 		System.out.println(answer);
 	}
 	

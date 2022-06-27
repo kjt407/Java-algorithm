@@ -3,7 +3,7 @@ package study_algorithm;
 import java.util.*;
 import java.io.*;
 
-// 2Â÷¿ø ¹è¿­ ºÎºĞÇÕ
+// 2ì°¨ì› ë°°ì—´ ë¶€ë¶„í•©
 public class P11660 {
 
 	public static void main(String[] args) throws Exception{
@@ -20,16 +20,16 @@ public class P11660 {
                 origin[i][y] = Integer.parseInt(st.nextToken());
             }
         }
-        // ÇÕ¹è¿­À» »ı¼ºÇÏ´Â °úÁ¤¿¡¼­ À½¼öÀÎ ÀÎµ¦½º°¡ ¹ß»ıÇÏ±â ¶§¹®¿¡ N+1·Î ¹è¿­À» ÃÊ±âÈ­ ½ÃÅ´.
+        // í•©ë°°ì—´ì„ ìƒì„±í•˜ëŠ” ê³¼ì •ì—ì„œ ìŒìˆ˜ì¸ ì¸ë±ìŠ¤ê°€ ë°œìƒí•˜ê¸° ë•Œë¬¸ì— N+1ë¡œ ë°°ì—´ì„ ì´ˆê¸°í™” ì‹œí‚´.
         int[][] preArray = new int[N+1][N+1];
-        // À§¿Í °°Àº »çÀ¯·Î ¹İº¹ ½ÃÀÛº¯¼ö¸¦ 1·Î ÃÊ±âÈ­.
+        // ìœ„ì™€ ê°™ì€ ì‚¬ìœ ë¡œ ë°˜ë³µ ì‹œì‘ë³€ìˆ˜ë¥¼ 1ë¡œ ì´ˆê¸°í™”.
         for(int x=1; x<=N; x++){
             for(int y=1; y<=N; y++){
                 preArray[x][y] = preArray[x-1][y] + preArray[x][y-1] - preArray[x-1][y-1] + origin[x-1][y-1]; 
             }
         }
         
-        // ÀÔ·Â¹ŞÀº ¼ö ¸¸Å­ ½ÃÀÛ,Á¾´ÜÁ¡ ÁÂÇ¥¸¦ ÀÔ·Â¹Ş°í Ã³¸®ÇÑ´Ù
+        // ì…ë ¥ë°›ì€ ìˆ˜ ë§Œí¼ ì‹œì‘,ì¢…ë‹¨ì  ì¢Œí‘œë¥¼ ì…ë ¥ë°›ê³  ì²˜ë¦¬í•œë‹¤
         for(int i=0; i<M; i++) {
             st = new StringTokenizer(br.readLine());
             int x1 = Integer.parseInt(st.nextToken());
@@ -37,7 +37,7 @@ public class P11660 {
             int x2 = Integer.parseInt(st.nextToken());
             int y2 = Integer.parseInt(st.nextToken());
             
-            // Á¾´ÜÁ¡ ºÎºĞÇÕ¿¡¼­ Æ÷ÇÔµÇÁö ¾Ê´Â ºÎºĞÀ» »©±â
+            // ì¢…ë‹¨ì  ë¶€ë¶„í•©ì—ì„œ í¬í•¨ë˜ì§€ ì•ŠëŠ” ë¶€ë¶„ì„ ë¹¼ê¸°
             int result = preArray[x2][y2] - preArray[x1-1][y2] - preArray[x2][y1-1] + preArray[x1-1][y1-1];
             System.out.println(result);
         }

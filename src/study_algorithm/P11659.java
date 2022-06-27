@@ -3,7 +3,7 @@ package study_algorithm;
 import java.util.*;
 import java.io.*;
 
-// ±¸°£ÇÕ ±¸ÇÏ±â
+// êµ¬ê°„í•© êµ¬í•˜ê¸°
 public class P11659 {
 
     public static void main(String[] args) throws IOException{
@@ -15,13 +15,13 @@ public class P11659 {
         
         long[] preArray = new long[suNo+1];
         
-        // ÀÔ·Â°ú µ¿½Ã¿¡ ÇÕ ¹è¿­ »ı¼º
+        // ì…ë ¥ê³¼ ë™ì‹œì— í•© ë°°ì—´ ìƒì„±
         stringTokenizer = new StringTokenizer(bufferedReader.readLine());
         for(int i=1; i<=suNo; i++){
             preArray[i] = preArray[i-1]+Integer.parseInt(stringTokenizer.nextToken());
         }
         
-        // ÇÕ¹è¿­À» ±â¹İÀ¸·Î ±¸°£ÇÕ ¿¬»ê
+        // í•©ë°°ì—´ì„ ê¸°ë°˜ìœ¼ë¡œ êµ¬ê°„í•© ì—°ì‚°
         for(int i=0; i<fnNo; i++){
             stringTokenizer = new StringTokenizer(bufferedReader.readLine());
             int start = Integer.parseInt(stringTokenizer.nextToken());
